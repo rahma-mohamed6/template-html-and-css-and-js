@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    list-style: none;
+}
+html{
+    behavior: smooth;
+}
+body{
+    background-image: linear-gradient(#200016,#10001f);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+a{
+    color:white;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+}
+header h2 a{
+    text-transform: uppercase;
+    letter-spacing: 1.5;
+    font-size: 25px;
+}
+header ul {
+    display: flex;
+}
+header ul li a{
+    padding: 5px 10px;
+}
+header ul li a:hover , a.active{
+    background-color: white;
+    color:black;
+    border-radius: 5px;
+}
+.menu .toggle{
+    display: none;
+}
+header .open{
+    color:white;
+    font-size: 24px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+    
+}
+.main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.main img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    
+}
+.main::after{
+    content:"";
+    position:absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to top ,#200016,transparent) ;
+}
+.main #moon{
+    mix-blend-mode: screen;
+}
+.container{
+    color:white;
+    padding: 30px;
+}
+.container h2{
+    margin: 20px;
+    font-size: 30px;
+}
+.container p{
+    margin: 20px;
+    line-height: 1.4;
+}
+@media(max-width:790px){
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left:100%;
+        top:0;
+        background-color: rgba(0, 0, 0, 0.885);
+        z-index: 100;
+    }
+    header.active .menu{
+        left:0;
+    }
+    header .open{
+        display: block;
+    }
+    .menu .toggle{
+        width: 100%;
+        display: flex;
+        padding: 20px;
+        justify-content: flex-end;
+    }
+    .menu .toggle .close{
+        color:white;
+        font-size: 24px;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+    .menu ul {
+        flex-direction: column;
+        padding-top:60px ;
+    }
+    .menu ul li a{
+        display: block;
+        margin-top:20px ;
+    }
+}
